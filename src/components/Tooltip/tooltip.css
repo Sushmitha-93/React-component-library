@@ -1,0 +1,193 @@
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-bottom: 8px;
+  padding: 14px;
+  border-radius: 8px;
+  z-index: 1;
+
+  background-color: var(--tooltip-bg);
+  opacity: 0.9;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  width: max-content; /* important. max-width do not work inside inline-block display */
+}
+.tooltip__icon {
+  color: var(--tooltip-icon-color);
+  font-size: 18px;
+  width: 24px;
+  height: 24px;
+  /* flex-shrink: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.tooltip__title {
+  color: var(--tooltip-title-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.tooltip__message {
+  color: var(--tooltip-message-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Tooltip close button */
+.tooltip__close {
+  cursor: pointer;
+  color: var(--tooltip-close-color);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.tooltip__close:hover {
+  color: var(--tooltip-close-hover-color);
+}
+
+/* Placement Styles */
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+}
+.tooltip-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 8px;
+}
+.tooltip-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+}
+
+/* Arrow Styles */
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.tooltip-arrow-top {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0 8px;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+.tooltip-arrow-bottom {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent var(--tooltip-bg) transparent;
+}
+.tooltip-arrow-left {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0px 8px 8px;
+  border-color: transparent transparent transparent var(--tooltip-bg);
+}
+.tooltip-arrow-right {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 8px 8px 0px;
+  border-color: transparent var(--tooltip-bg) transparent transparent;
+}
+
+/* Tooltip Themes */
+.tooltip-theme-dark {
+  --tooltip-bg: #333;
+  --tooltip-title-color: #fff;
+  --tooltip-message-color: #c7c7c7;
+  --tooltip-icon-color: #c7c7c7;
+  --tooltip-close-color: #c7c7c7;
+  --tooltip-close-hover-color: #fff;
+}
+.tooltip-theme-blue {
+  --tooltip-bg: #1e40af;
+  --tooltip-title-color: #fff;
+  --tooltip-message-color: #e8edff;
+  --tooltip-icon-color: #7ea6f2;
+  --tooltip-close-color: #d8d8d8;
+  --tooltip-close-hover-color: #fff;
+}
+.tooltip-theme-pink {
+  --tooltip-bg: #a9229b;
+  --tooltip-title-color: #fff;
+  --tooltip-message-color: #ffe9fd;
+  --tooltip-icon-color: #f462e6;
+  --tooltip-close-color: #d8d8d8;
+  --tooltip-close-hover-color: #fff;
+}
+.tooltip-theme-green {
+  --tooltip-bg: #47aa5d;
+  --tooltip-title-color: #fff;
+  --tooltip-message-color: #e3ffe9;
+  --tooltip-icon-color: #c1ffcf;
+  --tooltip-close-color: #d8d8d8;
+  --tooltip-close-hover-color: #fff;
+}
+.tooltip-theme-light {
+  --tooltip-bg: #f9f9f9;
+  --tooltip-title-color: #111827;
+  --tooltip-message-color: #6b7280;
+  --tooltip-icon-color: #6b7280;
+  --tooltip-close-color: #6b7280;
+  --tooltip-close-hover-color: #111827;
+}
+.tooltip-theme-blue-light {
+  --tooltip-bg: #e0e7ff;
+  --tooltip-title-color: #1e40af;
+  --tooltip-message-color: #1c51b9;
+  --tooltip-icon-color: #1c51b9;
+  --tooltip-close-color: #1c51b9;
+  --tooltip-close-hover-color: #3b82f6;
+}
+.tooltip-theme-pink-light {
+  --tooltip-bg: #fff3fc;
+  --tooltip-title-color: #a9229b;
+  --tooltip-message-color: #c7369e;
+  --tooltip-icon-color: #c7369e;
+  --tooltip-close-color: #c7369e;
+  --tooltip-close-hover-color: #d36bb3;
+}
+.tooltip-theme-green-light {
+  --tooltip-bg: #e7fff3;
+  --tooltip-title-color: #137a2a;
+  --tooltip-message-color: #3c8c4e;
+  --tooltip-icon-color: #41a557;
+  --tooltip-close-color: #3c8c4e;
+  --tooltip-close-hover-color: #5cbf6e;
+}

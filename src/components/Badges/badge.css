@@ -1,0 +1,49 @@
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.5em; /* Adjust padding as needed */
+  font-size: max(0.75em, 12px); /* 75% of the parent font size or 14px*/
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 0.2em; /* Rounded corners */
+}
+
+.badge-pill {
+  border-radius: 9999px; /* Pill shape */
+}
+
+.badge-gray {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.badge-red {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-yellow {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-green {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-blue {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+.badge-purple {
+  background-color: #f3e8ff;
+  color: #6d28d9;
+}
+
+.badge-pink {
+  background-color: #fce7f3;
+  color: #9d174d;
+}

@@ -1,0 +1,7 @@
+body {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: lavender;
+}
