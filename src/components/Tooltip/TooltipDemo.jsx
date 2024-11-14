@@ -7,8 +7,42 @@ export default function TooltipDemo() {
   return (
     <>
       <h2>Tooltip</h2>
+      <h3>Basic Tooltip</h3>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Tooltip>
+          <Button variant="text">Hover me</Button>
+        </Tooltip>
+      </div>
+      <h3>Tooltip placements:</h3>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Tooltip message="Tooltip on top" placement="top" arrow>
+          <Button variant="text">Top</Button>
+        </Tooltip>
+        <Tooltip message="Tooltip on bottion" placement="bottom" arrow>
+          <Button variant="text">Bottom</Button>
+        </Tooltip>
+        <Tooltip message="Tooltip on left" placement="left" arrow>
+          <Button variant="text">Left</Button>
+        </Tooltip>
+        <Tooltip message="Tooltip on right" placement="right" arrow>
+          <Button variant="text">Right</Button>
+        </Tooltip>
+      </div>
+      <h3>Tooltip with icon, title</h3>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Tooltip
+          icon={<HiOutlineInbox />}
+          title="Archive notes"
+          message="Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur."
+          placement="right"
+          arrow
+        >
+          <Button variant="text">Custom Tooltip</Button>
+        </Tooltip>
+      </div>
+
       <div style={{ paddingBottom: "40px" }}>
-        <h4>Tooltip themes: </h4>
+        <h3>Tooltip themes: </h3>
       </div>
 
       {/* Grid container for displaying tooltips */}
@@ -116,26 +150,6 @@ export default function TooltipDemo() {
             arrow
           ></Tooltip>
         </div>
-      </div>
-
-      <h4>Tooltip placements:</h4>
-      <p>
-        Hover over the Button to see the tooltips directions: top, right,
-        bottom, left
-      </p>
-      <div>
-        <Tooltip message="Tooltip on top" placement="top">
-          <Button variant="text">Top</Button>
-        </Tooltip>
-        <Tooltip message="Tooltip on right" placement="right">
-          <Button variant="text">Right</Button>
-        </Tooltip>
-        <Tooltip message="Tooltip on bottion" placement="bottom">
-          <Button variant="text">Bottom</Button>
-        </Tooltip>
-        <Tooltip message="Tooltip on left" placement="left">
-          <Button variant="text">Left</Button>
-        </Tooltip>
       </div>
     </>
   );

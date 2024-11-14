@@ -27,18 +27,22 @@ const Tooltip = ({
   initialVisible = false,
   theme = "dark",
 }) => {
-  const [isVisible, setIsVisible] = useState(initialVisible);
   theme = VALID_THEMES.includes(theme) ? theme : "dark";
+
+  const [isVisible, setIsVisible] = useState(initialVisible);
+
+  const showTooltip = () => {
+    setTimeout(() => setIsVisible(true), delay.show);
+  };
+  const hideTooltip = () => {
+    setTimeout(() => setIsVisible(sticky), delay.hide);
+  };
 
   return (
     <div
       className="tooltip-container"
-      onMouseEnter={() => {
-        setTimeout(() => setIsVisible(true), delay.show);
-      }}
-      onMouseLeave={() => {
-        setTimeout(() => setIsVisible(sticky), delay.hide);
-      }}
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
     >
       {children}
 
