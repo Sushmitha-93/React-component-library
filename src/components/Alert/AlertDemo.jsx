@@ -6,10 +6,19 @@ export default function AlertDemo() {
     <>
       <h2>Alert</h2>
       <h4>Basic Alerts</h4>
-      <Alert severity="success">Success alert</Alert>
-      <Alert severity="error">Error alert</Alert>
-      <Alert severity="warning">Warning alert</Alert>
-      <Alert severity="info">Info alert</Alert>
+      <Alert severity="success" dismissible={true}>
+        Success alert
+      </Alert>
+      <Alert severity="error" dismissible={true}>
+        {" "}
+        Error alert
+      </Alert>
+      <Alert severity="warning" dismissible={true}>
+        Warning alert
+      </Alert>
+      <Alert severity="info" dismissible={true}>
+        Info alert
+      </Alert>
       <Alert severity="success" icon={false}>
         Success alert without icon
       </Alert>

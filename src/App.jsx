@@ -4,6 +4,7 @@ import AlertDemo from "./components/Alert/AlertDemo";
 import CardDemo from "./components/Cards/CardDemo";
 import ToastDemo from "./components/Toast/ToastDemo";
 import TooltipDemo from "./components/Tooltip/TooltipDemo";
+import { ToastProvider } from "./components/Toast/ToastContext";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <AlertDemo />
         <CardDemo />
         <TooltipDemo />
-        {/* <ToastDemo /> */}
+        <ToastProvider>
+          <ToastDemo />
+        </ToastProvider>
       </div>
     </>
   );

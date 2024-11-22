@@ -20,6 +20,13 @@
   flex-shrink: 0;
 }
 
+.alert-close {
+  cursor: pointer;
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
 .alert-success {
   background-color: #ecfdf5;
   color: #047857;
