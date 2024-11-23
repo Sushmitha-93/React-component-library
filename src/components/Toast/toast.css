@@ -23,12 +23,14 @@
   bottom: 20px;
   right: 20px;
   align-items: flex-end;
+  flex-direction: column-reverse;
 }
 
 .toast-bottom-left {
   bottom: 20px;
   left: 20px;
   align-items: flex-start;
+  flex-direction: column-reverse;
 }
 
 .toast-top-center {
@@ -43,4 +45,149 @@
   left: 50%;
   transform: translateX(-50%);
   align-items: center;
+  flex-direction: column-reverse;
+}
+
+/* Slide Animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-top {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-top {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-bottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Toast Transitions */
+.toast-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+.toast-slide-out-right {
+  animation: slide-out-right 0.3s ease-in forwards;
+}
+.toast-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+.toast-slide-out-left {
+  animation: slide-out-left 0.3s ease-in forwards;
+}
+.toast-slide-in-top {
+  animation: slide-in-top 0.3s ease-out;
+}
+.toast-slide-out-top {
+  animation: slide-out-top 0.3s ease-in forwards;
+}
+.toast-slide-in-bottom {
+  animation: slide-in-bottom 0.3s ease-out;
+}
+.toast-slide-out-bottom {
+  animation: slide-out-bottom 0.3s ease-in forwards;
+}
+
+/* Grow Animation */
+@keyframes grow-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+.toast-grow-in {
+  animation: grow-in 0.3s ease-out;
+}
+.toast-grow-out {
+  animation: grow-out 0.3s ease-in forwards;
 }

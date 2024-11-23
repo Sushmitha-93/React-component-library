@@ -17,24 +17,21 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
   // List of toasts
   const [toasts, setToasts] = useState([]);
 
-  // Function to add a toast to the list
+  // Function to add a toast to the list. (Shared via context)
   const addToast = useCallback(
     ({
       message,
       dismissible = true,
       duration = 2000,
       position = defaultPosition,
+      transition = "none",
       ...rest
     }) => {
       const id = Date.now();
       setToasts((prev) => [
         ...prev,
-        { id, message, dismissible, duration, position, ...rest },
+        { id, message, dismissible, duration, position, transition, ...rest },
       ]);
-
-      if (duration > 0) {
-        setTimeout(() => removeToast(id), duration);
-      }
     },
     [defaultPosition]
   );
