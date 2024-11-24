@@ -16,6 +16,7 @@ const VALID_POSITIONS = [
 export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
   // List of toasts
   const [toasts, setToasts] = useState([]);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   // Function to add a toast to the list. (Shared via context)
   const addToast = useCallback(
@@ -32,14 +33,37 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
         ...prev,
         { id, message, dismissible, duration, position, transition, ...rest },
       ]);
+      setTimeout(() => {
+        closeToast(id);
+      }, duration);
     },
     [defaultPosition]
   );
+
+  function closeToast(id) {
+    setIsDismissed(true);
+    setTimeout(() => {
+      removeToast(id);
+    }, 400);
+  }
 
   // Function to remove a toast from the list
   const removeToast = useCallback((id) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
+
+  function getTransitionClassName(transition, position) {
+    const className = `toast-${transition}-${isDismissed ? "out" : "in"}`;
+    if (transition === "slide") {
+      const [ySide, xSide] = position.split("-");
+      if (xSide !== "center") {
+        return className + "-" + xSide;
+      } else {
+        return className + "-" + ySide;
+      }
+    }
+    return className;
+  }
 
   return (
     <ToastContext.Provider value={addToast}>
@@ -49,8 +73,13 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
         <div key={pos} className={`toast-container toast-${pos}`}>
           {toasts
             .filter((toast) => toast.position === pos)
-            .map(({ id, message, ...rest }) => (
-              <Toast key={id} {...rest} onClose={() => removeToast(id)}>
+            .map(({ id, message, transition, ...rest }) => (
+              <Toast
+                key={id}
+                {...rest}
+                transitionClassName={getTransitionClassName(transition, pos)}
+                onClose={() => removeToast(id)}
+              >
                 {message}
               </Toast>
             ))}

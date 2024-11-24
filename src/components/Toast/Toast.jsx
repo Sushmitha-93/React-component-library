@@ -1,46 +1,8 @@
 import Alert from "../Alert/index";
-import { useEffect, useState } from "react";
 
-const Toast = ({
-  children,
-  title,
-  transition,
-  duration,
-  onClose,
-  position,
-  ...props
-}) => {
-  const [isDismissed, setIsDismissed] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      closeToast();
-    }, duration);
-  });
-
-  function closeToast() {
-    setIsDismissed(true);
-    setTimeout(() => {
-      onClose();
-    }, 400);
-  }
-
-  function getTransitionClassName() {
-    const className = `toast-${transition}-${isDismissed ? "out" : "in"}`;
-    if (transition === "slide") {
-      const [ySide, xSide] = position.split("-");
-      if (xSide !== "center") {
-        return className + "-" + xSide;
-      } else {
-        return className + "-" + ySide;
-      }
-    }
-    return className;
-  }
-  console.log(getTransitionClassName());
-
+const Toast = ({ children, title, transitionClassName, ...props }) => {
   return (
-    <div className={transition && getTransitionClassName()}>
+    <div className={transitionClassName}>
       <Alert {...props}>
         {title && <Alert.Title>{title}</Alert.Title>}
         {children}
