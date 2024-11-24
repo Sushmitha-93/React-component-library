@@ -1,0 +1,42 @@
+.toc {
+  margin-top: 10%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 20px;
+}
+.toc-heading {
+  padding-left: 15px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #333;
+}
+
+.toc nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc nav ul li {
+  padding: 10px 0 10px 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.toc nav ul li:hover {
+  color: #8a97a9;
+  border-left: 1px solid #8a97a9;
+}
+
+.toc nav ul a {
+  text-decoration: none;
+}
+
+.toc nav ul li.active {
+  color: #006bd6;
+
+  border-left: 1px solid #006bd6;
+}

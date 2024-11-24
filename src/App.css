@@ -1,5 +1,23 @@
-.container {
-  margin: 0 auto;
+.main-container {
+  display: flex;
+  gap: 20px; /* Space between content and TOC */
   padding: 20px;
-  max-width: 800px;
+}
+
+/* Left content section */
+.content {
+  flex: 1; /* Takes up the remaining space */
+  padding-right: 20px;
+  overflow-y: auto; /* Ensure the content scrolls if it overflows */
+}
+
+/* Optional: Adjust the container for responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Stack content and TOC vertically on smaller screens */
+  }
+
+  .content {
+    padding-right: 0;
+  }
 }
