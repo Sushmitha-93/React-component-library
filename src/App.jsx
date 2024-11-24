@@ -20,20 +20,20 @@ function App() {
     <>
       <div className="main-container">
         <div className="content">
-          <h1 style={{ textAlign: "center" }}>React Component Library Demo</h1>
-          <div id="badge-section">
+          <h1 style={{ textAlign: "center" }}>React Component Library</h1>
+          <div id="badge-section" className="section">
             <BadgeDemo />
           </div>
-          <div id="alert-section">
+          <div id="alert-section" className="section">
             <AlertDemo />
           </div>
-          <div id="card-section">
+          <div id="card-section" className="section">
             <CardDemo />
           </div>
-          <div id="tooltip-section">
+          <div id="tooltip-section" className="section">
             <TooltipDemo />
           </div>
-          <div id="toast-section">
+          <div id="toast-section" className="section">
             <ToastProvider>
               <ToastDemo />
             </ToastProvider>

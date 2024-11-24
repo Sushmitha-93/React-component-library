@@ -1,5 +1,5 @@
 .toc {
-  margin-top: 10%;
+  margin-top: 6%;
   width: 200px;
   position: fixed;
   top: 0;
@@ -8,8 +8,7 @@
   padding: 20px;
 }
 .toc-heading {
-  padding-left: 15px;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 500;
   color: #333;
 }
@@ -21,14 +20,16 @@
 }
 
 .toc nav ul li {
-  padding: 10px 0 10px 15px;
-  color: #333;
-  font-weight: 500;
+  border-left: 2px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+  font-size: 0.95em;
+  color: #4e4e4e;
+  font-weight: 400;
 }
 
 .toc nav ul li:hover {
   color: #8a97a9;
-  border-left: 1px solid #8a97a9;
+  border-left: 2px solid #8a97a9;
 }
 
 .toc nav ul a {
@@ -38,5 +39,5 @@
 .toc nav ul li.active {
   color: #006bd6;
 
-  border-left: 1px solid #006bd6;
+  border-left: 2px solid #006bd6;
 }

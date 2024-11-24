@@ -11,6 +11,10 @@
   overflow-y: auto; /* Ensure the content scrolls if it overflows */
 }
 
+.section {
+  padding: 10px 0;
+}
+
 /* Optional: Adjust the container for responsiveness */
 @media (max-width: 768px) {
   .main-container {

@@ -14,11 +14,9 @@ const VALID_POSITIONS = [
 ];
 
 export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
-  // List of toasts
   const [toasts, setToasts] = useState([]);
-  const [isDismissed, setIsDismissed] = useState(false);
 
-  // Function to add a toast to the list. (Shared via context)
+  // Function to add a toast to the list
   const addToast = useCallback(
     ({
       message,
@@ -31,8 +29,18 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
       const id = Date.now();
       setToasts((prev) => [
         ...prev,
-        { id, message, dismissible, duration, position, transition, ...rest },
+        {
+          id,
+          message,
+          dismissible,
+          duration,
+          position,
+          transition,
+          isDismissed: false,
+          ...rest,
+        },
       ]);
+
       setTimeout(() => {
         closeToast(id);
       }, duration);
@@ -41,18 +49,23 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
   );
 
   function closeToast(id) {
-    setIsDismissed(true);
+    // Set `isDismissed` to true for the toast getting dismissed
+    setToasts((prev) =>
+      prev.map((toast) =>
+        toast.id === id ? { ...toast, isDismissed: true } : toast
+      )
+    );
+    // Remove after timeout to allow exit/out animation to complete
     setTimeout(() => {
       removeToast(id);
     }, 400);
   }
 
-  // Function to remove a toast from the list
   const removeToast = useCallback((id) => {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
 
-  function getTransitionClassName(transition, position) {
+  function getTransitionClassName(transition, position, isDismissed) {
     const className = `toast-${transition}-${isDismissed ? "out" : "in"}`;
     if (transition === "slide") {
       const [ySide, xSide] = position.split("-");
@@ -73,11 +86,15 @@ export const ToastProvider = ({ defaultPosition = "top-right", children }) => {
         <div key={pos} className={`toast-container toast-${pos}`}>
           {toasts
             .filter((toast) => toast.position === pos)
-            .map(({ id, message, transition, ...rest }) => (
+            .map(({ id, message, transition, isDismissed, ...rest }) => (
               <Toast
                 key={id}
                 {...rest}
-                transitionClassName={getTransitionClassName(transition, pos)}
+                transitionClassName={getTransitionClassName(
+                  transition,
+                  pos,
+                  isDismissed
+                )}
                 onClose={() => removeToast(id)}
               >
                 {message}
