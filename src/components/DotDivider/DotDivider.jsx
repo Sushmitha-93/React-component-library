@@ -1,4 +1,4 @@
-import "./dotDivider.css";
+import "./dotdivider.css";
 
 const DotDivider = () => {
   return (

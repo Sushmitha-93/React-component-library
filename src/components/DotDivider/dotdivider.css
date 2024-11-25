@@ -1,6 +1,7 @@
 .dot-divider {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 22px;
   margin: 62px 0;
 }
