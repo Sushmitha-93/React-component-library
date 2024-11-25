@@ -1,5 +1,5 @@
 import Tooltip from "./index";
-import "./TooltipDemo.css"; // Import the CSS file for styling the grid
+import "./tooltipdemo.css"; // Import the CSS file for styling the grid
 import Button from "@mui/material/Button";
 import { HiOutlineInbox } from "react-icons/hi";
 
