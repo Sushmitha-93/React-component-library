@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Tooltip.css";
+import "./tooltip.css";
 import { IoClose } from "react-icons/io5";
 
 const VALID_THEMES = [
