@@ -5,12 +5,14 @@
   top: 0;
   right: 0;
   height: 100%;
-  padding: 20px;
 }
+
 .toc-heading {
-  font-size: 0.9em;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #333;
+  letter-spacing: 1.5px;
+  margin: 0 0 1rem;
 }
 
 .toc nav ul {
@@ -22,7 +24,7 @@
 .toc nav ul li {
   border-left: 2px solid #cdcdcd;
   padding: 0.5rem 1rem;
-  font-size: 0.95em;
+  font-size: 0.9rem;
   color: #4e4e4e;
   font-weight: 400;
 }

@@ -29,7 +29,7 @@ const TOC = ({ sections }) => {
   return (
     <>
       <div className="toc">
-        <h4 className="toc-heading">CONTENT</h4>
+        <h4 className="toc-heading">In this page</h4>
         <nav>
           <ul>
             {sections.map(({ id, label }) => (

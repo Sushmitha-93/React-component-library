@@ -11,8 +11,8 @@
   overflow-y: auto; /* Ensure the content scrolls if it overflows */
 }
 
-.section {
-  padding: 10px 0;
+.page-title {
+  margin-bottom: 40px;
 }
 
 /* Optional: Adjust the container for responsiveness */

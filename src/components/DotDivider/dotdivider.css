@@ -1,0 +1,13 @@
+.dot-divider {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 60px 0;
+}
+
+.dot {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background-color: #464646;
+}
