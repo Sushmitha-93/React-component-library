@@ -1,7 +1,7 @@
 .tooltip-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
-  gap: 20px; /* Add space between grid items */
+  gap: 21px; /* Add space between grid items */
 }
 
 .tooltip-grid > div {
