@@ -24,18 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the project
-      - name: Build project
-        run: npm run build
-
-      # Step 5: Configure Git Identity
+      # Step 4: Configure Git Identity
       - name: Configure Git Identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: |
+          npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
