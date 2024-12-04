@@ -17,12 +17,13 @@ const TOC = ({ sections }) => {
     threshold: 0.5,
   });
 
+  // Observe each section when the component mounts
   useEffect(() => {
     sections.forEach((section) => {
       const element = document.getElementById(section.id);
       if (element) observer.observe(element);
     });
-
+    // Cleanup
     return () => observer.disconnect();
   }, [sections]);
 
