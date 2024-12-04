@@ -17,3 +17,7 @@ This project leverages several key concepts to ensure the components are reusabl
 5. **Documentation**: Comprehensive documentation and examples for each component to facilitate ease of use and integration.
 
 These concepts collectively contribute to the creation of a robust and reusable component library that can be easily integrated into various projects.
+
+## Screenshot
+
+![Demo page Screenshot](src/assets/pageScreenshot.png)
